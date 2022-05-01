@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script data-require="angular.js@1.4.7" data-semver="1.4.7" src="angular.min.js">
+  
+  </script>
+  <script>
+      var page_load_start = new Date();
+  </script>
+</head>
+
+<body ng-app="DemoApp" ng-controller="akuaController">
+  <div ng-init="load()">
+  </div>
+</body>
+<script>
+var app = angular.module('DemoApp', [])
+app.controller('akuaController', function($scope) {
+  $scope.load = function() {
+   // alert("Window is loaded");
+	      var page_load_end = new Date();
+      var load_time = page_load_end.getTime() - page_load_start.getTime();
+     // load_time = load_time;//parseInt( load_time / 100 )*100;
+	  alert(load_time);
+  }
+});
+</script>
+
+</html>
